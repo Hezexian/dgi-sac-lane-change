@@ -1,0 +1,9 @@
+runs/
+results/
+videos/
+__pycache__/
+*.py[cod]
+.venv*/
+.pytest_cache/
+*.zip
+curves.png

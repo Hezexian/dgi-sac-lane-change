@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper below."
+title: "DGI-SAC: Dynamic Graph Interaction Soft Actor-Critic for Lane-Changing Decisions (code)"
+type: software
+authors:
+  - family-names: Yu
+    given-names: Lingli
+    affiliation: "School of Automation, Central South University"
+  - family-names: He
+    given-names: Zexian
+    affiliation: "School of Automation, Central South University"
+    email: zexianhe99@163.com
+  - family-names: Li
+    given-names: Keyi
+    affiliation: "School of Automation, Central South University"
+version: 1.0.0
+date-released: 2026-10-16
+license: MIT
+keywords:
+  - lane changing
+  - deep reinforcement learning
+  - soft actor-critic
+  - graph neural networks
+  - highway-env
+preferred-citation:
+  type: article
+  title: "Dynamic Graph Interaction Soft Actor-Critic for Lane-Changing Decisions: Safety–Efficiency Trade-offs and Training Failure Modes"
+  authors:
+    - family-names: Yu
+      given-names: Lingli
+    - family-names: He
+      given-names: Zexian
+    - family-names: Li
+      given-names: Keyi
+  year: 2026
