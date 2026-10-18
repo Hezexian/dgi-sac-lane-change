@@ -23,7 +23,7 @@ The task is `highway-fast-v0` in [highway-env](https://github.com/Farama-Foundat
 Use Python 3.12.
 
 ```bash
-git clone [GITHUB_URL] dgi-sac-lane-change
+git clone https://github.com/Hezexian/dgi-sac-lane-change.git dgi-sac-lane-change
 cd dgi-sac-lane-change
 python -m venv .venv
 ```
