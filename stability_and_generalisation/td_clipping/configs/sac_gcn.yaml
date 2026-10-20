@@ -1,0 +1,87 @@
+algorithm:
+  name: sac_gcn
+  params:
+    encoder_type: gcn
+    graph_hidden_size: 256
+    graph_num_layers: 3 #1
+    edge_weight_mode: inverse_distance
+    self_loop_weight: 1.0
+    position_indices:
+      - 1
+      - 2
+    node_feature_mode: all_except_presence
+    fusion_mode: concat
+    use_presence_mask: true
+    distance_threshold: null
+    # ego-centric-fixed-scale: positions arrive scaled by observation.FEATURE_SCALE (x/100, y/12); rebuild metres, ego at origin
+    position_scale: [100.0, 12.0]
+    ego_at_origin: true
+
+
+run:
+  env_name: highway-fast-v0
+  seed: 123456
+  cuda: true #false
+
+train:
+  policy: Gaussian
+  eval: true
+  gamma: 0.99
+  tau: 0.005
+  lr: 0.0003
+  critic_weight_decay: 0.0
+  alpha: 0.025 #1.0
+  automatic_entropy_tuning: false #true
+  batch_size: 256
+  num_steps: 1000001
+  hidden_size: 256
+  updates_per_step: 1
+  start_steps: 10000
+  target_update_interval: 1
+  replay_size: 1000000
+  save_every_episodes: 200
+  keep_last_checkpoints: 5
+
+test:
+  test_episodes: 1000
+  save_video: false
+  show_window: false
+  video_dir: null
+
+env:
+  observation:
+    type: Kinematics
+    vehicles_count: 8
+    features:
+      - presence
+      - x
+      - y
+      - vx
+      - vy
+      - heading
+    normalize: false
+    absolute: false
+  action:
+    type: ContinuousAction
+    steering_range:
+      - -1
+      - 1
+    speed_range:
+      - 0
+      - 30
+  lanes_count: 4
+  vehicles_count: 30 #10
+  vehicles_density: 1.0
+  duration: 40
+  initial_spacing: 2
+  collision_reward: -2.0
+  right_lane_reward: 0.0
+  high_speed_reward: 0.5
+  lane_change_reward: 0.0
+  reward_speed_range:
+    - 20
+    - 30
+  simulation_frequency: 15
+  policy_frequency: 5
+  normalize_reward: false
+  offroad_terminal: true

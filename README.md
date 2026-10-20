@@ -4,8 +4,7 @@ Code for the paper **Dynamic Graph Interaction Soft Actor-Critic for Lane-Changi
 Safety–Efficiency Trade-offs and Training Failure Modes** (Lingli Yu, Zexian He, Keyi Li; School of
 Automation, Central South University).
 
-Trained models, evaluation records, training logs and the scripts that
-regenerate the paper's tables and figures: [ZENODO_DOI]
+Trained models, evaluation records, training logs and videos: [ZENODO_DOI]
 
 <p align="center">
   <img src="docs/dgi_sac_scenario380000.gif" width="100%" alt="DGI-SAC overtaking in test scenario 380000">
@@ -95,6 +94,8 @@ python scripts/record_video.py --method dgi_sac --seed 2 --models-dir <extracted
 ```
 
 By default, evaluation uses test scenario seeds 380000–380999. Use `--scenarios screening` for seeds 350000–350999. Evaluation outputs are saved under `results/`, and videos under `videos/`. Add `--trajectories` to save per-step trajectories.
+
+The training-stability (Section 4.4) and generalisation (Section 4.5) experiments were run with the code in [`stability_and_generalisation/`](stability_and_generalisation/README.md).
 
 ## Citation
 
