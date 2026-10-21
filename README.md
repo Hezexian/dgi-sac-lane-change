@@ -104,7 +104,6 @@ The training-stability (Section 4.4) and generalisation (Section 4.5) experiment
   title  = {Dynamic Graph Interaction Soft Actor-Critic for Lane-Changing Decisions: Safety--Efficiency Trade-offs and Training Failure Modes},
   author = {Yu, Lingli and He, Zexian and Li, Keyi},
   year   = {2026},
-  note   = {Manuscript under review}
 }
 ```
 
