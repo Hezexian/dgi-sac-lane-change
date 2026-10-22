@@ -4,7 +4,7 @@ Code for the paper **Dynamic Graph Interaction Soft Actor-Critic for Lane-Changi
 Safety–Efficiency Trade-offs and Training Failure Modes** (Lingli Yu, Zexian He, Keyi Li; School of
 Automation, Central South University).
 
-Trained models, evaluation records, training logs and videos: [ZENODO_DOI]
+Trained models, evaluation records, training logs and videos: [10.5281/zenodo.23522589](https://doi.org/10.5281/zenodo.23522589)
 
 <p align="center">
   <img src="docs/dgi_sac_scenario380000.gif" width="100%" alt="DGI-SAC overtaking in test scenario 380000">
@@ -85,12 +85,12 @@ python evaluate.py --checkpoint runs/dgi_sac_seed26093001/final.pt --episodes 10
 python scripts/record_video.py --checkpoint runs/dgi_sac_seed26093001/final.pt --scenario 380000
 ```
 
-To use the paper’s trained models, download and extract `dgi-sac-lane-change-models.zip` from [ZENODO_DOI]. Select a method and paper seed (1–15 for DGI-SAC, SAC, and MLP, or 1–10 for TD3 and DDPG). For example, `--seed 2` selects paper seed 002, corresponding to training seed 26093002.
+To use the paper’s trained models, download and extract `dgi-sac-lane-change-models.zip` from [10.5281/zenodo.23522589](https://doi.org/10.5281/zenodo.23522589). Select a method and paper seed (1–15 for DGI-SAC, SAC, and MLP, or 1–10 for TD3 and DDPG). For example, `--seed 2` selects paper seed 002, corresponding to training seed 26093002.
 
 ```bash
-python evaluate.py --method dgi_sac --seed 2 --models-dir <extracted>/models
-python evaluate.py --method dgi_sac --seed 2 --models-dir <extracted>/models --ablation cut_ego_edges   # Section 4.3
-python scripts/record_video.py --method dgi_sac --seed 2 --models-dir <extracted>/models --scenario 380000
+python evaluate.py --method dgi_sac --seed 2 --models-dir <extracted>/dgi-sac-lane-change-models
+python evaluate.py --method dgi_sac --seed 2 --models-dir <extracted>/dgi-sac-lane-change-models --ablation cut_ego_edges   # Section 4.3
+python scripts/record_video.py --method dgi_sac --seed 2 --models-dir <extracted>/dgi-sac-lane-change-models --scenario 380000
 ```
 
 By default, evaluation uses test scenario seeds 380000–380999. Use `--scenarios screening` for seeds 350000–350999. Evaluation outputs are saved under `results/`, and videos under `videos/`. Add `--trajectories` to save per-step trajectories.
